@@ -3,13 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const livroRoutes = require('./routes/livroRoutes');
-app.use('/api', livroRoutes);
-
+// Middlewares devem vir antes das rotas
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
+// Rotas
+const livroRoutes = require('./routes/livroRoutes');
+app.use('/api', livroRoutes);
+
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.json({ message: 'API da Biblioteca Online está rodando!' });
