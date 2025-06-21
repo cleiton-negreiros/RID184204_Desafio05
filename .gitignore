@@ -1,0 +1,9 @@
+# Ignorar node_modules de ambos os projetos
+frontend/node_modules
+backend/node_modules
+
+# Ignorar arquivos de ambiente sensíveis
+.env
+
+# Ignorar build de produção do front-end (caso gere)
+frontend/dist
